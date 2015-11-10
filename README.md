@@ -6,7 +6,7 @@ I would really welcome and appericate contributions to this component.
 
 ## How To Get Started
 
-Download KarthVader and add it your project.
+Download the KarthVader from github and add KarthVader-Source directory into your project.
 
 ## Setup
 
