@@ -31,7 +31,9 @@ Before start using KarthVader class, you need to setup the core data file name &
 
 KarthVader is a singleton object, it creates and maintain your managed object contexts. It follows Core Data Stack hierarchy.
 
-<img src="https://github.com/karthikkeyan/KarthVader/blob/master/Arch.jpg" alt="Context Hierarchy" title = "Context Hierarchy" />
+<p align="center">
+	<img src="https://github.com/karthikkeyan/KarthVader/blob/master/Arch.jpg" alt="Context Hierarchy" title = "Context Hierarchy" />
+</p>
 
 
 ## Write
