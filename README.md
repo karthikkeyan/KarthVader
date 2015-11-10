@@ -8,12 +8,6 @@ I would really welcome and appericate contributions to this component.
 
 Download KarthVader and add it your project.
 
-Or
-
-If you are a CocoaPods lover, include the following in your Podfile
-
-	pod "KarthVader"
-
 ## Setup
 
 Before start using KarthVader class, you need to setup the core data file name & object model. Before do any thing with KarthVader you need to give your core data configuration details.
