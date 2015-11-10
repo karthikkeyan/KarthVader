@@ -7,8 +7,7 @@ Pod::Spec.new do |spec|
   spec.authors      = { 'Karthik Keyan' => 'karthikkeyan.balan@gmail.com' }
   spec.summary      = 'A simple and easy to use wrapper for core data'
   spec.source       = { :git => 'https://github.com/karthikkeyan/KarthVader.git', :tag => spec.version }
-  spec.source_files = 'KarthVader/*.swift'
-  spec.public_header_files = 'Pods/*/.swift'
+  spec.source_files = '*.swift'
   spec.framework    = 'CoreData'
 
   spec.ios.deployment_target = '9.0'
