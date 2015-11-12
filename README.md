@@ -1,3 +1,14 @@
+---
+layout: post
+title: "KarthVader - Core Data Wrapper in Swift"
+author: Karthik Keyan Balan
+author_twitter: karthikkeyanb 
+author_gravatar: 31b4f6b901db1a5da649e99869c22932
+date: 2015-12-11 13:50:28 +0530
+comments: true
+categories: iOS
+---
+
 ## Overview
 
 KarthVader is a core data wrapper component for iOS and OS X, built to minimize the effort, of a programmers, to work with core data, by taking advantage of Swift 2.0 features. It gives you natural way of interaction with your core data models.
@@ -6,17 +17,19 @@ I would really welcome and appericate contributions to this component.
 
 ## How To Get Started
 
-Download the KarthVader from github and add KarthVader-Source directory into your project.
+Download the [KarthVader] from github and add KarthVader-Source directory into your project.
 
 ## Setup
 
 Before start using KarthVader class, you need to setup the core data file name & object model. Before do any thing with KarthVader you need to give your core data configuration details.
 
+```swift
 	var config = KarthVaderConfiguration()
 	config.dataModelName = "DataModel"
 	config.sqlFileName = "database"
 
 	KarthVader.setConfiguration(config)
+```
 
 **Note:** You dont need to include file extension.
 
@@ -25,31 +38,34 @@ Before start using KarthVader class, you need to setup the core data file name &
 
 KarthVader is a singleton object, it creates and maintain your managed object contexts. It follows Core Data Stack hierarchy.
 
-<p align="center">
-	<img src="https://github.com/karthikkeyan/KarthVader/blob/master/Arch.jpg" alt="Context Hierarchy" title = "Context Hierarchy" />
-</p>
+{% img https://github.com/karthikkeyan/KarthVader/blob/master/Arch.jpg "Context Hierarchy" %}
 
 
 ## Write
 
 Let see how we usually create an core data object,
 
+```swift
 	let context = newWriteContext()
                 let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as? User
                 if let unwrappedUser = user {
                     // Set values to your attributes
                 }
+```
 
 Its annoying, isn't it. Just to create a simple object do we have to write this much code. The worse thing is it not type save, it returns NSManagedObject. We have to type case the object return by this method again.
 
 We have simplifed this process in more natural way,
 
+```swift
 	let writeContext = KarthVader.writeContext()
 
 	let user = User(context: writeContext)
+```
 
 All you have to do is to make **KarthVaderObject**, which is a subclass of NSManagedObject, as the superclass of your core data model. The changes you made in the **writeContext** remain unsaved untill you call **commit** method.
 
+```swift
 	// Example write
 	let writeContext = KarthVader.writeContext()
 
@@ -58,20 +74,26 @@ All you have to do is to make **KarthVaderObject**, which is a subclass of NSMan
 	user.email = "karthikkeyan.balan@gmail.com"
 
 	writeContext.commit()
+```
 
 **Note:** KarthVader.writeContext() will create a new context in private queue with KarthVader.manager().mainContext as its parent context.
 
 You can send a completion closer in **commit** method,
 
+```swift
 	writeContext.commit { /* Update UI */ }
-
+```
 	/* OR */
 
+```swift
 	writeContext.commit() { /* Update UI */ }
+```
 
 Method **commit()** save recursively throught all its parent context till the persistent store, asynchronously by default. If you want to commit synchronously, send **wait: true** in commit method.
 
+```swift
 	writeContext.commit(wait: true) { /* Update UI */ }
+```
 
 **Note:** completion closer wont get called in main thread if the commit operation is asynchronous.
 
@@ -80,10 +102,13 @@ Method **commit()** save recursively throught all its parent context till the pe
 
 Fetch operation is simplified compared to traditional way, and here it is,
 
+```swift
 	let objects = context.objects(User.self)
+```
 
 Simple isnt it?. Also you can apply predication, Sorting, limit & offset as well
 
+```swift
 	// Predication
 	let objects = context.objects(User.self, filter: "age > 26")
 
@@ -92,6 +117,7 @@ Simple isnt it?. Also you can apply predication, Sorting, limit & offset as well
 
 	// Fetch Limit and Offset
 	let objects = context.objects(User.self, filter: nil, sort: ["age" : true], chunk: NSMakeRange(0, 20))
+```
 
 **entity:** Object type you want to fetch
 **filter:** filter string used as NSPredicate.
@@ -105,6 +131,7 @@ One of the common functionality in any app is, the use of REST APIs, parsing JSO
 
 **Example JSON**
 
+```json
 	{
 		"user":
 		[
@@ -135,10 +162,12 @@ One of the common functionality in any app is, the use of REST APIs, parsing JSO
 	         }
 	     ]
 	}
+```
 
 
 **User Model**
 
+```swift
 	class User: KarthVaderObject {
 
 		@NSManaged var age: NSNumber?
@@ -169,9 +198,11 @@ One of the common functionality in any app is, the use of REST APIs, parsing JSO
     	}
 
 	}
+```
 
 **Following User Model**
 
+```swift
 	class FollowingUser: KarthVaderObject {
 
 		@NSManaged var name: String?
@@ -179,14 +210,17 @@ One of the common functionality in any app is, the use of REST APIs, parsing JSO
 		@NSManaged var userID: String?
 
 	}
+```
 
 And this is how you parse,
 
+```swift
 	let userJSON = getUsersList()
 
 	let context = KarthVader.writeContext()
 	context.parse(userJSON, type: User.self)
 	context.commit()
+```
 
 Thas it.
 
@@ -201,3 +235,6 @@ If you notice User Object, it is overriding a method called **classForKey:**. If
 It is a very common problem that, the keys in REST API response wont match exactly with your model's property. See the above JSON, it contains a key **sex**, but in the **User** model we don't have that property named **sex**, instead we have a property called **gender**. To address this type of issue, just override **keyForJSONKey:** method in your model class and return the appropriate property name. In the above User model we are mapping the JSON key **sex** to **gender** property.
 
 So when the parser coundnt set a value for a key, it gives the model a chance to map a different property of the that key. If your send nil or if you didnt override this method, then the parser will simply ignore it.
+
+
+[KarthVader]:https://github.com/karthikkeyan/KarthVader
