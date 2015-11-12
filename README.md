@@ -1,14 +1,3 @@
----
-layout: post
-title: "KarthVader - Core Data Wrapper in Swift"
-author: Karthik Keyan Balan
-author_twitter: karthikkeyanb 
-author_gravatar: 31b4f6b901db1a5da649e99869c22932
-date: 2015-12-11 13:50:28 +0530
-comments: true
-categories: iOS
----
-
 ## Overview
 
 KarthVader is a core data wrapper component for iOS and OS X, built to minimize the effort, of a programmers, to work with core data, by taking advantage of Swift 2.0 features. It gives you natural way of interaction with your core data models.
