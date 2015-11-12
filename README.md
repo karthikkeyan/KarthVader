@@ -47,10 +47,10 @@ Let see how we usually create an core data object,
 
 ```swift
 	let context = newWriteContext()
-                let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as? User
-                if let unwrappedUser = user {
-                    // Set values to your attributes
-                }
+	let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as? User
+	if let unwrappedUser = user {
+		// Set values to your attributes
+	}
 ```
 
 Its annoying, isn't it. Just to create a simple object do we have to write this much code. The worse thing is it not type save, it returns NSManagedObject. We have to type case the object return by this method again.
@@ -82,11 +82,6 @@ You can send a completion closer in **commit** method,
 
 ```swift
 	writeContext.commit { /* Update UI */ }
-```
-	/* OR */
-
-```swift
-	writeContext.commit() { /* Update UI */ }
 ```
 
 Method **commit()** save recursively throught all its parent context till the persistent store, asynchronously by default. If you want to commit synchronously, send **wait: true** in commit method.
