@@ -8,9 +8,14 @@
 
 import CoreData
 
+private let fetchBatchSize = 20
+
+public let NSRangeZero = NSMakeRange(0, 0)
+
 
 class KarthVaderObject: NSManagedObject {
     
+    // MARK: - Init Methods
     required override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
@@ -22,10 +27,22 @@ class KarthVaderObject: NSManagedObject {
         
         if let unwrappedValues = values {
             for (key, value) in unwrappedValues {
-                self[key] = value
+                if self.respondsToSelector(Selector(key)) {
+                    self.setValue(value, forKeyPath: key)
+                }
+                else if let forwardKey = self.dynamicType.keyForJSONKey(key) {
+                    self.setValue(value, forKeyPath: forwardKey)
+                }
             }
         }
     }
+    
+}
+
+
+// MARK: - Parsing Utility
+
+extension KarthVaderObject {
     
     class func primaryKey() -> String? {
         return nil
@@ -39,21 +56,8 @@ class KarthVaderObject: NSManagedObject {
         return nil
     }
     
-    
-    // MARK: - Public Methods
-    
-    subscript(key: String) -> AnyObject? {
-        get {
-            return self.valueForKeyPath(key)
-        }
-        set {
-            if self.respondsToSelector(Selector(key)) {
-                self.setValue(newValue, forKeyPath: key)
-            }
-            else if let forwardKey = self.dynamicType.keyForJSONKey(key) {
-                self.setValue(newValue, forKeyPath: forwardKey)
-            }
-        }
+    class func specialKeyPaths() -> [String: String]? {
+        return nil
     }
     
 }

@@ -12,8 +12,6 @@ typealias SortDescription = [String: Bool]
 
 private let fetchBatchSize = 20
 
-public let ChunkZero = NSMakeRange(0, 0)
-
 
 extension NSManagedObjectContext {
     
@@ -39,12 +37,11 @@ extension NSManagedObjectContext {
         }
     }
     
-    func objects<T: KarthVaderObject>(entity: T.Type, filter: String? = nil, sort: SortDescription? = nil, chunk: NSRange = ChunkZero, includePendingChanges: Bool = false) -> [T]? {
+    func objects<T: KarthVaderObject>(entity: T.Type, filter: String? = nil, sort: [NSSortDescriptor]? = nil, range: NSRange = NSRangeZero) -> [T]? {
         let fetchRequest = NSFetchRequest(entityName: entity.entityName)
         fetchRequest.fetchBatchSize = fetchBatchSize
-        fetchRequest.fetchOffset = chunk.location
-        fetchRequest.fetchLimit = chunk.length
-        fetchRequest.includesPendingChanges = includePendingChanges
+        fetchRequest.fetchOffset = range.location
+        fetchRequest.fetchLimit = range.length
         
         if let filter = filter {
             let predicate = NSPredicate(format: filter)
@@ -52,18 +49,22 @@ extension NSManagedObjectContext {
         }
         
         if let sort = sort {
-            var sortDescriptors = [NSSortDescriptor]()
-            for (key, value) in sort {
-                let sortDescriptor = NSSortDescriptor(key: key, ascending: value)
-                sortDescriptors.append(sortDescriptor)
-            }
-            
-            fetchRequest.sortDescriptors = sortDescriptors
+            fetchRequest.sortDescriptors = sort
         }
         
         let result = try! self.executeFetchRequest(fetchRequest)
         
         return result as? [T]
+    }
+    
+    func firstObject<T: KarthVaderObject>(entity: T.Type, filter: String? = nil, sort: [NSSortDescriptor]? = nil) -> T? {
+        let result = objects(entity, filter: filter, sort: sort, range: NSMakeRange(0, 1));
+        
+        if let unrappedResult = result {
+            return unrappedResult.first
+        }
+        
+        return nil
     }
     
 }

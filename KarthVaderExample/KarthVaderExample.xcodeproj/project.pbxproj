@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4D290EA1BF5E97E0044CA66 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4D290E81BF5E97E0044CA66 /* DataModel.xcdatamodeld */; };
+		F4D290F11BF619360044CA66 /* Tweet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D290EF1BF619360044CA66 /* Tweet+CoreDataProperties.swift */; };
+		F4D290F21BF619360044CA66 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D290F01BF619360044CA66 /* Tweet.swift */; };
+		F4DB2F531BF4BD55009694E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F521BF4BD55009694E1 /* AppDelegate.swift */; };
+		F4DB2F551BF4BD55009694E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F541BF4BD55009694E1 /* ViewController.swift */; };
+		F4DB2F581BF4BD55009694E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DB2F561BF4BD55009694E1 /* Main.storyboard */; };
+		F4DB2F5A1BF4BD55009694E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DB2F591BF4BD55009694E1 /* Assets.xcassets */; };
+		F4DB2F5D1BF4BD55009694E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DB2F5B1BF4BD55009694E1 /* LaunchScreen.storyboard */; };
+		F4DB2F681BF4BD55009694E1 /* KarthVaderExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F671BF4BD55009694E1 /* KarthVaderExampleUITests.swift */; };
+		F4DB2F781BF4BD61009694E1 /* KarthVader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F731BF4BD61009694E1 /* KarthVader.swift */; };
+		F4DB2F791BF4BD61009694E1 /* KarthVaderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */; };
+		F4DB2F7A1BF4BD61009694E1 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */; };
+		F4DB2F7B1BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */; };
+		F4DB2F7C1BF4BD61009694E1 /* NSManagedObjectContext+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F771BF4BD61009694E1 /* NSManagedObjectContext+Parser.swift */; };
+		F4DB2F7E1BF4C190009694E1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB2F7D1BF4C190009694E1 /* Social.framework */; };
+		F4DB2F801BF4C3AF009694E1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB2F7F1BF4C3AF009694E1 /* Accounts.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4DB2F641BF4BD55009694E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4DB2F471BF4BD55009694E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4DB2F4E1BF4BD55009694E1;
+			remoteInfo = KarthVaderExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4D290E91BF5E97E0044CA66 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F4D290EF1BF619360044CA66 /* Tweet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tweet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4D290F01BF619360044CA66 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		F4DB2F4F1BF4BD55009694E1 /* KarthVaderExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KarthVaderExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4DB2F521BF4BD55009694E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4DB2F541BF4BD55009694E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4DB2F571BF4BD55009694E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4DB2F591BF4BD55009694E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4DB2F5C1BF4BD55009694E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4DB2F5E1BF4BD55009694E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DB2F631BF4BD55009694E1 /* KarthVaderExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KarthVaderExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4DB2F671BF4BD55009694E1 /* KarthVaderExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarthVaderExampleUITests.swift; sourceTree = "<group>"; };
+		F4DB2F691BF4BD55009694E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DB2F731BF4BD61009694E1 /* KarthVader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarthVader.swift; sourceTree = "<group>"; };
+		F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarthVaderObject.swift; sourceTree = "<group>"; };
+		F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
+		F4DB2F771BF4BD61009694E1 /* NSManagedObjectContext+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Parser.swift"; sourceTree = "<group>"; };
+		F4DB2F7D1BF4C190009694E1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F4DB2F7F1BF4C3AF009694E1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4DB2F4C1BF4BD55009694E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4DB2F801BF4C3AF009694E1 /* Accounts.framework in Frameworks */,
+				F4DB2F7E1BF4C190009694E1 /* Social.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4DB2F601BF4BD55009694E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4DB2F461BF4BD55009694E1 = {
+			isa = PBXGroup;
+			children = (
+				F4DB2F7F1BF4C3AF009694E1 /* Accounts.framework */,
+				F4DB2F7D1BF4C190009694E1 /* Social.framework */,
+				F4DB2F511BF4BD55009694E1 /* KarthVaderExample */,
+				F4DB2F661BF4BD55009694E1 /* KarthVaderExampleUITests */,
+				F4DB2F501BF4BD55009694E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4DB2F501BF4BD55009694E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4DB2F4F1BF4BD55009694E1 /* KarthVaderExample.app */,
+				F4DB2F631BF4BD55009694E1 /* KarthVaderExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4DB2F511BF4BD55009694E1 /* KarthVaderExample */ = {
+			isa = PBXGroup;
+			children = (
+				F4DB2F721BF4BD61009694E1 /* KarthVader */,
+				F4DB2F521BF4BD55009694E1 /* AppDelegate.swift */,
+				F4DB2F541BF4BD55009694E1 /* ViewController.swift */,
+				F4DB2F561BF4BD55009694E1 /* Main.storyboard */,
+				F4DB2F591BF4BD55009694E1 /* Assets.xcassets */,
+				F4DB2F5B1BF4BD55009694E1 /* LaunchScreen.storyboard */,
+				F4DB2F5E1BF4BD55009694E1 /* Info.plist */,
+				F4D290E81BF5E97E0044CA66 /* DataModel.xcdatamodeld */,
+				F4D290EF1BF619360044CA66 /* Tweet+CoreDataProperties.swift */,
+				F4D290F01BF619360044CA66 /* Tweet.swift */,
+			);
+			path = KarthVaderExample;
+			sourceTree = "<group>";
+		};
+		F4DB2F661BF4BD55009694E1 /* KarthVaderExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F4DB2F671BF4BD55009694E1 /* KarthVaderExampleUITests.swift */,
+				F4DB2F691BF4BD55009694E1 /* Info.plist */,
+			);
+			path = KarthVaderExampleUITests;
+			sourceTree = "<group>";
+		};
+		F4DB2F721BF4BD61009694E1 /* KarthVader */ = {
+			isa = PBXGroup;
+			children = (
+				F4DB2F731BF4BD61009694E1 /* KarthVader.swift */,
+				F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */,
+				F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */,
+				F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */,
+				F4DB2F771BF4BD61009694E1 /* NSManagedObjectContext+Parser.swift */,
+			);
+			name = KarthVader;
+			path = ../../KarthVader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4DB2F4E1BF4BD55009694E1 /* KarthVaderExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4DB2F6C1BF4BD55009694E1 /* Build configuration list for PBXNativeTarget "KarthVaderExample" */;
+			buildPhases = (
+				F4DB2F4B1BF4BD55009694E1 /* Sources */,
+				F4DB2F4C1BF4BD55009694E1 /* Frameworks */,
+				F4DB2F4D1BF4BD55009694E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KarthVaderExample;
+			productName = KarthVaderExample;
+			productReference = F4DB2F4F1BF4BD55009694E1 /* KarthVaderExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4DB2F621BF4BD55009694E1 /* KarthVaderExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4DB2F6F1BF4BD55009694E1 /* Build configuration list for PBXNativeTarget "KarthVaderExampleUITests" */;
+			buildPhases = (
+				F4DB2F5F1BF4BD55009694E1 /* Sources */,
+				F4DB2F601BF4BD55009694E1 /* Frameworks */,
+				F4DB2F611BF4BD55009694E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4DB2F651BF4BD55009694E1 /* PBXTargetDependency */,
+			);
+			name = KarthVaderExampleUITests;
+			productName = KarthVaderExampleUITests;
+			productReference = F4DB2F631BF4BD55009694E1 /* KarthVaderExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4DB2F471BF4BD55009694E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Karthik Keyan";
+				TargetAttributes = {
+					F4DB2F4E1BF4BD55009694E1 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					F4DB2F621BF4BD55009694E1 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = F4DB2F4E1BF4BD55009694E1;
+					};
+				};
+			};
+			buildConfigurationList = F4DB2F4A1BF4BD55009694E1 /* Build configuration list for PBXProject "KarthVaderExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4DB2F461BF4BD55009694E1;
+			productRefGroup = F4DB2F501BF4BD55009694E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4DB2F4E1BF4BD55009694E1 /* KarthVaderExample */,
+				F4DB2F621BF4BD55009694E1 /* KarthVaderExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4DB2F4D1BF4BD55009694E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4DB2F5D1BF4BD55009694E1 /* LaunchScreen.storyboard in Resources */,
+				F4DB2F5A1BF4BD55009694E1 /* Assets.xcassets in Resources */,
+				F4DB2F581BF4BD55009694E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4DB2F611BF4BD55009694E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4DB2F4B1BF4BD55009694E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4DB2F791BF4BD61009694E1 /* KarthVaderObject.swift in Sources */,
+				F4D290F21BF619360044CA66 /* Tweet.swift in Sources */,
+				F4DB2F7B1BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift in Sources */,
+				F4DB2F551BF4BD55009694E1 /* ViewController.swift in Sources */,
+				F4DB2F7A1BF4BD61009694E1 /* NSManagedObject+Extension.swift in Sources */,
+				F4DB2F531BF4BD55009694E1 /* AppDelegate.swift in Sources */,
+				F4DB2F781BF4BD61009694E1 /* KarthVader.swift in Sources */,
+				F4D290EA1BF5E97E0044CA66 /* DataModel.xcdatamodeld in Sources */,
+				F4D290F11BF619360044CA66 /* Tweet+CoreDataProperties.swift in Sources */,
+				F4DB2F7C1BF4BD61009694E1 /* NSManagedObjectContext+Parser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4DB2F5F1BF4BD55009694E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4DB2F681BF4BD55009694E1 /* KarthVaderExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4DB2F651BF4BD55009694E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4DB2F4E1BF4BD55009694E1 /* KarthVaderExample */;
+			targetProxy = F4DB2F641BF4BD55009694E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4DB2F561BF4BD55009694E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4DB2F571BF4BD55009694E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4DB2F5B1BF4BD55009694E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4DB2F5C1BF4BD55009694E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4DB2F6A1BF4BD55009694E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4DB2F6B1BF4BD55009694E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4DB2F6D1BF4BD55009694E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KarthVaderExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karthikkeyan.KarthVaderExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F4DB2F6E1BF4BD55009694E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KarthVaderExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karthikkeyan.KarthVaderExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F4DB2F701BF4BD55009694E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KarthVaderExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karthikkeyan.KarthVaderExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KarthVaderExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F4DB2F711BF4BD55009694E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KarthVaderExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karthikkeyan.KarthVaderExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KarthVaderExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4DB2F4A1BF4BD55009694E1 /* Build configuration list for PBXProject "KarthVaderExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4DB2F6A1BF4BD55009694E1 /* Debug */,
+				F4DB2F6B1BF4BD55009694E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4DB2F6C1BF4BD55009694E1 /* Build configuration list for PBXNativeTarget "KarthVaderExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4DB2F6D1BF4BD55009694E1 /* Debug */,
+				F4DB2F6E1BF4BD55009694E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4DB2F6F1BF4BD55009694E1 /* Build configuration list for PBXNativeTarget "KarthVaderExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4DB2F701BF4BD55009694E1 /* Debug */,
+				F4DB2F711BF4BD55009694E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F4D290E81BF5E97E0044CA66 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4D290E91BF5E97E0044CA66 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F4D290E91BF5E97E0044CA66 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F4DB2F471BF4BD55009694E1 /* Project object */;
+}
