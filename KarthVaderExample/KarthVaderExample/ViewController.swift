@@ -63,12 +63,7 @@ class ViewController: UIViewController {
     
     private func storeResponse(response: AnyObject) {
         KarthVader.transaction { [weak self] (context) -> () in
-            if response is JSONArray {
-                context.parse(response as! JSONArray, type: Tweet.self)
-            }
-            else {
-               context.parse(response as! JSONDictionary, type: Tweet.self)
-            }
+            KarthVaderObject.parse(response as! JSONArray, context: context, type: Tweet.self)
             
             context.commit() {
                 self?.fetchLocalFeeds()
@@ -78,7 +73,7 @@ class ViewController: UIViewController {
     
     private func fetchLocalFeeds() {
         KarthVader.transactionMain { [weak self] (context) -> () in
-            if let objects = context.objects(Tweet.self) {
+            if let objects = KarthVaderObject.fetch(Tweet.self, context: context) {
                 self?.tweets = objects
             }
             
