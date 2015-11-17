@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F47ACDBA1BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47ACDB91BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift */; };
+		F47ACDBC1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47ACDBB1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift */; };
 		F4D290EA1BF5E97E0044CA66 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4D290E81BF5E97E0044CA66 /* DataModel.xcdatamodeld */; };
 		F4D290F11BF619360044CA66 /* Tweet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D290EF1BF619360044CA66 /* Tweet+CoreDataProperties.swift */; };
 		F4D290F21BF619360044CA66 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D290F01BF619360044CA66 /* Tweet.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F47ACDB91BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Parse.swift"; sourceTree = "<group>"; };
+		F47ACDBB1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Fetch.swift"; sourceTree = "<group>"; };
 		F4D290E91BF5E97E0044CA66 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		F4D290EF1BF619360044CA66 /* Tweet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tweet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4D290F01BF619360044CA66 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */,
 				F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */,
 				F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */,
+				F47ACDB91BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift */,
+				F47ACDBB1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift */,
 			);
 			name = KarthVader;
 			path = ../../KarthVader;
@@ -236,12 +242,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4DB2F791BF4BD61009694E1 /* KarthVaderObject.swift in Sources */,
+				F47ACDBA1BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift in Sources */,
 				F4D290F21BF619360044CA66 /* Tweet.swift in Sources */,
 				F4DB2F7B1BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift in Sources */,
 				F4DB2F551BF4BD55009694E1 /* ViewController.swift in Sources */,
 				F4DB2F7A1BF4BD61009694E1 /* NSManagedObject+Extension.swift in Sources */,
 				F4DB2F531BF4BD55009694E1 /* AppDelegate.swift in Sources */,
 				F4DB2F781BF4BD61009694E1 /* KarthVader.swift in Sources */,
+				F47ACDBC1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift in Sources */,
 				F4D290EA1BF5E97E0044CA66 /* DataModel.xcdatamodeld in Sources */,
 				F4D290F11BF619360044CA66 /* Tweet+CoreDataProperties.swift in Sources */,
 			);

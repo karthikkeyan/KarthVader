@@ -9,6 +9,7 @@
 import UIKit
 import Social
 import Accounts
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -49,13 +50,9 @@ class ViewController: UIViewController {
             let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: url, parameters: ["count" : "20"])
             request.account = account
             request.performRequestWithHandler({ [weak self] (data: NSData!, response: NSHTTPURLResponse!, error: NSError!) -> Void in
-                guard let strongSelf = self else {
-                    return
-                }
-                
                 if error == nil {
                     let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
-                    strongSelf.storeResponse(responseDictionary)
+                    self?.storeResponse(responseDictionary)
                 }
             })
         }
@@ -63,7 +60,8 @@ class ViewController: UIViewController {
     
     private func storeResponse(response: AnyObject) {
         KarthVader.transaction { [weak self] (context) -> () in
-            KarthVaderObject.parse(response as! JSONArray, context: context, type: Tweet.self)
+            
+            context.parse(response as! JSONArray, type: Tweet.self)
             
             context.commit() {
                 self?.fetchLocalFeeds()
@@ -73,7 +71,8 @@ class ViewController: UIViewController {
     
     private func fetchLocalFeeds() {
         KarthVader.transactionMain { [weak self] (context) -> () in
-            if let objects = KarthVaderObject.fetch(Tweet.self, context: context) {
+            
+            if let objects = context.fetch(Tweet.self) {
                 self?.tweets = objects
             }
             

@@ -10,17 +10,22 @@ import Foundation
 import CoreData
 
 
-class Tweet: KarthVaderObject {
+class Tweet: NSManagedObject {
+
+}
+
+
+extension Tweet: KarthVaderObject {
     
-    override class func specialKeyPaths() -> [String: String]? {
+    static func specialKeyPaths() -> [String: String]? {
         return ["user.screen_name" : "userHandle", "user.profile_image_url_https" : "imageURL"]
     }
     
-    override class func primaryKey() -> String? {
+    static func primaryKey() -> String? {
         return "feedID"
     }
     
-    override class func keyForJSONKey(key: String) -> String? {
+    static func keyForJSONKey(key: String) -> String? {
         var newKey: String? = nil
         
         if key == "screen_name" {
@@ -35,5 +40,5 @@ class Tweet: KarthVaderObject {
         
         return newKey
     }
-
+    
 }
