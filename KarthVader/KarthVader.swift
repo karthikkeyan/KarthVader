@@ -150,8 +150,6 @@ extension NSManagedObject {
 
 // MARK: - NSManagedObjectContext
 
-private let fetchBatchSize = 20
-
 extension NSManagedObjectContext {
     
     func commit(wait wait: Bool = false, completion: (() -> ())? = nil) {
