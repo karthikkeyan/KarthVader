@@ -20,8 +20,6 @@
 		F4DB2F681BF4BD55009694E1 /* KarthVaderExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F671BF4BD55009694E1 /* KarthVaderExampleUITests.swift */; };
 		F4DB2F781BF4BD61009694E1 /* KarthVader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F731BF4BD61009694E1 /* KarthVader.swift */; };
 		F4DB2F791BF4BD61009694E1 /* KarthVaderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */; };
-		F4DB2F7A1BF4BD61009694E1 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */; };
-		F4DB2F7B1BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */; };
 		F4DB2F7E1BF4C190009694E1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB2F7D1BF4C190009694E1 /* Social.framework */; };
 		F4DB2F801BF4C3AF009694E1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB2F7F1BF4C3AF009694E1 /* Accounts.framework */; };
 /* End PBXBuildFile section */
@@ -54,8 +52,6 @@
 		F4DB2F691BF4BD55009694E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DB2F731BF4BD61009694E1 /* KarthVader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarthVader.swift; sourceTree = "<group>"; };
 		F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarthVaderObject.swift; sourceTree = "<group>"; };
-		F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
-		F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		F4DB2F7D1BF4C190009694E1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		F4DB2F7F1BF4C3AF009694E1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -131,8 +127,6 @@
 			children = (
 				F4DB2F731BF4BD61009694E1 /* KarthVader.swift */,
 				F4DB2F741BF4BD61009694E1 /* KarthVaderObject.swift */,
-				F4DB2F751BF4BD61009694E1 /* NSManagedObject+Extension.swift */,
-				F4DB2F761BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift */,
 				F47ACDB91BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift */,
 				F47ACDBB1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift */,
 			);
@@ -244,9 +238,7 @@
 				F4DB2F791BF4BD61009694E1 /* KarthVaderObject.swift in Sources */,
 				F47ACDBA1BFB064100BF2E6C /* NSManagedObjectContext+Parse.swift in Sources */,
 				F4D290F21BF619360044CA66 /* Tweet.swift in Sources */,
-				F4DB2F7B1BF4BD61009694E1 /* NSManagedObjectContext+Extension.swift in Sources */,
 				F4DB2F551BF4BD55009694E1 /* ViewController.swift in Sources */,
-				F4DB2F7A1BF4BD61009694E1 /* NSManagedObject+Extension.swift in Sources */,
 				F4DB2F531BF4BD55009694E1 /* AppDelegate.swift in Sources */,
 				F4DB2F781BF4BD61009694E1 /* KarthVader.swift in Sources */,
 				F47ACDBC1BFB06C500BF2E6C /* NSManagedObjectContext+Fetch.swift in Sources */,

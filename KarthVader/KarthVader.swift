@@ -8,6 +8,8 @@
 
 import CoreData
 
+// MARK: - KarthVaderConfiguration
+
 struct KarthVaderConfiguration {
     
     var sqlFileName: String?
@@ -24,6 +26,9 @@ struct KarthVaderConfiguration {
     }
     
 }
+
+
+// MARK: - KarthVader
 
 class KarthVader {
     
@@ -119,6 +124,55 @@ class KarthVader {
     class func transactionMain(closure: (context: NSManagedObjectContext) -> ()) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             closure(context: KarthVader.sharedInstance().mainContext!)
+        }
+    }
+    
+}
+
+
+
+// MARK: - NSManagedObject
+
+extension NSManagedObject {
+    
+    public class var entityName: String {
+        let fullClassName = NSStringFromClass(self)
+        
+        let classComponent = fullClassName.componentsSeparatedByString(".")
+        
+        let className = classComponent.last
+        
+        return className!
+    }
+    
+}
+
+
+// MARK: - NSManagedObjectContext
+
+private let fetchBatchSize = 20
+
+extension NSManagedObjectContext {
+    
+    func commit(wait wait: Bool = false, completion: (() -> ())? = nil) {
+        let colsure = {
+            try! self.save()
+            
+            if let parent = self.parentContext {
+                parent.commit(wait: wait, completion: completion)
+            }
+            else {
+                if let completion = completion {
+                    completion()
+                }
+            }
+        }
+        
+        if wait {
+            self.performBlockAndWait(colsure)
+        }
+        else {
+            self.performBlock(colsure)
         }
     }
     

@@ -60,9 +60,7 @@ class ViewController: UIViewController {
     
     private func storeResponse(response: AnyObject) {
         KarthVader.transaction { [weak self] (context) -> () in
-            
             context.parse(response as! JSONArray, type: Tweet.self)
-            
             context.commit() {
                 self?.fetchLocalFeeds()
             }
