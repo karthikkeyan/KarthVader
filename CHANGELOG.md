@@ -25,3 +25,7 @@ KarthVader.transactionMain { [weak self] (context) -> () in
 	/* Reload UI */
 }
 ```
+
+### KarthVaderObject
+
+We made KarthVaderObject as a protocol, from 1.1 onwards you dont need to subclass your managed object. If only you want KarthVader parsing feature you confirm **KarthVaderObject** protocol.
