@@ -6,8 +6,6 @@ I would really welcome and appericate contributions to this component.
 
 ## How To Get Started
 
-Download the [KarthVader] from github and add KarthVader-Source directory into your project.
-
 ## Setup
 
 Before start using KarthVader class, you need to setup the core data file name & object model. Before do any thing with KarthVader you need to give your core data configuration details.
