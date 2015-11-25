@@ -50,7 +50,7 @@ We have simplifed this process in more natural way,
 	let user = User(context: writeContext)
 ```
 
-All you have to do is to make **KarthVaderObject**, which is a subclass of NSManagedObject, as the superclass of your core data model. The changes you made in the **writeContext** remain unsaved untill you call **commit** method.
+The changes you made in the **writeContext** remain unsaved untill you call **commit** method.
 
 ```swift
 	// Example write
@@ -79,6 +79,15 @@ Method **commit()** save recursively throught all its parent context till the pe
 
 **Note:** completion closer wont get called in main thread if the commit operation is asynchronous.
 
+Another way,
+To write a data use **transaction** class method, wrap all you code inside the closure. The closure comes with a context, you can make use of that context to do your core data manipulations. This context is a created in Private Thread and its parent context is main context.
+
+```swift
+KarthVader.transaction { (context) -> () in
+	context.parse(response as! JSONArray, type: Tweet.self)
+	context.commit()
+}
+```
 
 ## Read
 
@@ -105,6 +114,16 @@ Simple isnt it?. Also you can apply predication, Sorting, limit & offset as well
 **filter:** filter string used as NSPredicate.
 **sort:** Key-Bool dictionary, where Bool value represents ascending order. In above example result object will be sorted in ascending order based on there user's age.
 **chunk:** Range objects you want to fetch.
+
+Another way,
+To read we have created a new class method **transactionMain**. Using this method you can get a closure that runs in main thread. Besides this closure also gives you a context, but this context is main context. Use this methods to fetch and update UI.
+
+```swift
+KarthVader.transactionMain { [weak self] (context) -> () in
+	let objects = context.fetch(Tweet.self)
+	/* Reload UI */
+}
+```
 
 
 ## JSON
