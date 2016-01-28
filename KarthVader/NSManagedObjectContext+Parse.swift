@@ -33,7 +33,7 @@ extension NSManagedObjectContext {
             insert(value: value, forKey: key, intoObject: object)
         }
         
-        if let karthVaderObject = self as? KarthVaderObject, let specialKeyPaths = karthVaderObject.dynamicType.specialKeyPaths() {
+        if type.respondsToSelector("specialKeyPaths"), let specialKeyPaths = type.valueForKey("specialKeyPaths") as? [String: String] {
             for (keyPath, attributeName) in specialKeyPaths {
                 if let valueForAttribute = (json as NSDictionary).valueForKeyPath(keyPath) {
                     insert(value: valueForAttribute, forKey: attributeName, intoObject: object)
@@ -52,7 +52,7 @@ extension NSManagedObjectContext {
         
         // Object
         if value is JSONDictionary {
-            guard let karthVaderObject = self as? KarthVaderObject, let subType = karthVaderObject.dynamicType.classForKey(key), let subObject = parse(value as! JSONDictionary, type: subType) else {
+            guard let karthVaderObject = object as? KarthVaderObject, let subType = karthVaderObject.dynamicType.classForKey(key), let subObject = parse(value as! JSONDictionary, type: subType) else {
                 return
             }
             
@@ -62,7 +62,7 @@ extension NSManagedObjectContext {
         else if value is JSONArray {
             // If array have sub models 'classForKey:' method will return the class type
             // else if array dont have sub models, we will consider the array as array of AnyObject
-            guard let karthVaderObject = self as? KarthVaderObject, let subType = karthVaderObject.dynamicType.classForKey(key) else {
+            guard let karthVaderObject = object as? KarthVaderObject, let subType = karthVaderObject.dynamicType.classForKey(key) else {
                 return
             }
             
@@ -81,18 +81,18 @@ extension NSManagedObjectContext {
         if object.respondsToSelector(Selector(key)) {
             object.setValue(newValue, forKeyPath: key)
         }
-        else if let karthVaderObject = self as? KarthVaderObject, let forwardKey = karthVaderObject.dynamicType.keyForJSONKey(key) {
+        else if let karthVaderObject = object as? KarthVaderObject, let forwardKey = karthVaderObject.dynamicType.keyForJSONKey(key) {
             object.setValue(newValue, forKeyPath: forwardKey)
         }
     }
     
     private func createObject<T: NSManagedObject>(type: T.Type, json: JSONDictionary) -> T {
-        if let karthVaderObject = self as? KarthVaderObject, let primaryKey = karthVaderObject.dynamicType.primaryKey(), let value = json[primaryKey] {
+        if type.respondsToSelector("primaryKey"), let primaryKey = type.valueForKey("primaryKey") as? String, let value = json[primaryKey] as? String {
             
             let fetchRequest = NSFetchRequest(entityName: type.entityName)
             fetchRequest.fetchOffset = 0
             fetchRequest.fetchLimit = 1
-            fetchRequest.predicate = NSPredicate(format: "\(primaryKey) = \(value)")
+            fetchRequest.predicate = NSPredicate(format: "%K == %@", primaryKey, value)
             
             let result = try! self.executeFetchRequest(fetchRequest)
             
