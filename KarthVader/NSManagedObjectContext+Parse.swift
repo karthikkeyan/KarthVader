@@ -66,10 +66,10 @@ extension NSManagedObjectContext {
                 return
             }
             
-            var subObjects = Set<T>()
+            var subObjects = Set<NSManagedObject>()
             
             for subValue in value as! JSONArray {
-                if let subObject = parse(subValue, type: subType) as? T {
+                if let subObject = parse(subValue, type: subType) {
                     subObjects.insert(subObject)
                 }
             }
